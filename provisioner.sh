@@ -45,17 +45,15 @@ echo "[*] Generating Default Configs"
 # Bootstrap production instance
 # Automagically give it admin user and password
 echo "[*] BootStrapping Prod"
-# expect - <<EOF
-# spawn python2 rootthebox.py --setup=prod
-# expect "RootTheBox Admin Username:"
-# send "armenr\r"
-# expect "New Admin Password:"
-# send "fuckmeintheass123123\r"
-# expect "Confirm New Admin Password:"
-# send "fuckmeintheass123123\r"
-# EOF
-
-echo "armenr mamankoonerem123 mamankoonerem123" | ./rootthebox.py --setup=prod
+expect - <<EOF
+spawn python2 rootthebox.py --setup=prod
+expect "RootTheBox Admin Username:"
+send "armenr\r"
+expect "New Admin Password:"
+send "fuckmeintheass123123\r"
+expect "Confirm New Admin Password:"
+send "fuckmeintheass123123\r"
+EOF
 
 # Start the bitch
 echo "[*] Starting The Motherfucker"

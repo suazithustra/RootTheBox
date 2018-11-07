@@ -46,11 +46,11 @@ else:
     sys.stdout.write(PROMPT+"New Admin ")
     sys.stdout.flush()
     password1 = getpass.getpass()
-    print(password1)
+    print('HERE IS THE PASSWORD YOU PUT IN! ' + password1)
     sys.stdout.write(PROMPT+"Confirm New Admin ")
     sys.stdout.flush()
     password2 = getpass.getpass()
-    print(password2)
+    print('HERE IS THE PASSWORD YOU PUT IN! ' + password2)
     if password1 == password2 and len(password1) >= options.min_user_password_length:
         password = password1
     else:
