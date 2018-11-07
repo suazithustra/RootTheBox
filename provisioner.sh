@@ -27,7 +27,7 @@ zlib1g-dev \
 # # Clone Rootthebox
 echo "[*] Cloning Repo"
 # if [ -d "RootTheBox" ]; then rm -Rf RootTheBox; fi
-# git clone git://github.com/armenr/RootTheBox.git
+git clone git://github.com/armenr/RootTheBox.git
 cd RootTheBox
 
 # # Set up Dependencies for RootTheBox
