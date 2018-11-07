@@ -8,12 +8,6 @@ fi
 # -y flag will be passed to this variable for a non-interactive setup.
 SKIP="-y"
 
-if [[ "$SKIP" == " -y" ]]; then
-  echo "[*] Non-interactive setup - Setting mysql password to 'your_password'"
-  sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password your_password'
-  sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password your_password'
-fi
-
 if [[ $OSTYPE == "linux-gnu" ]]; then
   echo -e "\t#########################"
   echo -e "\t   Linux Configuration"

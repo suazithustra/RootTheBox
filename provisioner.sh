@@ -8,7 +8,7 @@ sudo apt-get upgrade -y
 sudo apt-get install python2.7 python-pip expect -y
 
 # Clone Rootthebox
-git clone git://github.com/moloch--/RootTheBox.git
+git clone git://github.com/armenr/RootTheBox.git
 cd RootTheBox
 
 # Set up Dependencies for RootTheBox
