@@ -22,6 +22,14 @@ Features
 
 Setup
 -------------------
+**BEFORE Going any further, please follow these steps:**
+  
+  1. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+  1. Download and install [Vagrant](https://www.vagrantup.com/downloads.html)
+  1. In the project directory, run: `vagrant up`
+  1. If all goes well, navigate to http://localhost:8080
+
+
 See the [Root the Box Wiki](https://github.com/moloch--/RootTheBox/wiki)
 
 Platform Requirements
