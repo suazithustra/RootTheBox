@@ -28,6 +28,9 @@ Setup
   1. Download and install [Vagrant](https://www.vagrantup.com/downloads.html)
   1. In the project directory, run: `vagrant up`
   1. If all goes well, navigate to http://localhost:8080
+  1. To stop the VM: `vagrant halt`
+  1. To destroy and create a fresh copy: `vagrant destroy`, then: `vagrant up`
+  1. To make changes to the provisioner script and REPROVISION the SAME host without creating a new one: `vagrant provision`
 
 
 See the [Root the Box Wiki](https://github.com/moloch--/RootTheBox/wiki)

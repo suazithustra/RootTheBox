@@ -1,5 +1,5 @@
 #!/bin/bash
-# BASHMISHINUH SEEKEEM
+# BASH-MISHINUH SEEKEEM
 
 # # Prep system
 echo "[*] Prepping System"
@@ -9,7 +9,20 @@ pgrep python | xargs kill
 
 # # Install Pre-Requisites
 echo "[*] Installing Prerequisite Packages"
-sudo apt-get install -y expect python-pip python-dev build-essential mysql-server memcached libmemcached-dev python-mysqldb python-mysqldb-dbg python-pycurl python-recaptcha zlib1g-dev libmysqlclient-dev
+sudo apt-get install -y \
+build-essential \
+expect \
+libmemcached-dev \
+libmysqlclient-dev
+memcached \
+mysql-server \
+python-dev \
+python-mysqldb \
+python-mysqldb-dbg \
+python-pip \
+python-pycurl \
+python-recaptcha \
+zlib1g-dev \
 
 # # Clone Rootthebox
 echo "[*] Cloning Repo"
@@ -19,18 +32,20 @@ cd RootTheBox
 
 # # Set up Dependencies for RootTheBox
 echo "[*] Installing Python Packages From Pip"
-pip2 install tornado --upgrade
-pip2 install pbkdf2 --upgrade
-pip2 install mysql-python --upgrade
-pip2 install mysqlclient --upgrade
-pip2 install sqlalchemy --upgrade
-pip2 install python-memcached --upgrade
-pip2 install python-dateutil --upgrade
-pip2 install defusedxml --upgrade
-pip2 install netaddr --upgrade
-pip2 install nose --upgrade
-pip2 install future --upgrade
-pip2 install python-resize-image --upgrade
+defusedxml \
+future \
+mysql-python \
+mysqlclient \
+netaddr \
+nose \
+pbkdf2 \
+pip2 install \
+python-dateutil \
+python-memcached \
+python-resize-image \
+sqlalchemy \
+tornado \
+--upgrade
 
 # # Set up MySQL for RootTheBox
 echo "[*] Setting Up MySQL"
