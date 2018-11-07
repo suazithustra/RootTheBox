@@ -32,6 +32,9 @@ develop-eggs
 *.crt
 *.key
 
+# Vagrant shit
+.vagrant/
+
 # XML exports
 *.xml
 
