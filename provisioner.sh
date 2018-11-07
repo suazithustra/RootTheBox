@@ -57,7 +57,8 @@ echo "[*] Generating Default Configs"
 # send -- "fuckmeintheass123123\r"
 # EOF
 
-printf 'armenr\mamankoonerem123\mamankoonerem123' | ./rootthebox.py --setup=prod
+echo "[*] BootStrapping Prod"
+./rootthebox.py --setup=prod
 
 # Start the bitch
 echo "[*] Starting The Motherfucker"
