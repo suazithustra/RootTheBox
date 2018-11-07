@@ -5,19 +5,15 @@ if [[ "$EUID" != "0" ]]; then
   exit 1
 fi
 
-# -y flag will be passed to this variable for a non-interactive setup.
-SKIP="-y"
+echo -e "\t#########################"
+echo -e "\t   Linux Configuration"
+echo -e "\t#########################"
 
-if [[ $OSTYPE == "linux-gnu" ]]; then
-  echo -e "\t#########################"
-  echo -e "\t   Linux Configuration"
-  echo -e "\t#########################"
+echo "[*] Installing pip/gcc..."
+apt-get install -y python-pip python-dev build-essential
 
-  echo "[*] Installing pip/gcc..."
-  apt-get install python-pip python-dev build-essential "$SKIP"
-
-  echo "[*] Installing packages..."
-  apt-get install mysql-server memcached libmemcached-dev python-mysqldb python-mysqldb-dbg python-pycurl python-recaptcha zlib1g-dev libmysqlclient-dev "$SKIP"
+echo "[*] Installing packages..."
+apt-get -y install mysql-server memcached libmemcached-dev python-mysqldb python-mysqldb-dbg python-pycurl python-recaptcha zlib1g-dev libmysqlclient-dev "$SKIP"
 
 echo "[*] Installing python libs..."
 

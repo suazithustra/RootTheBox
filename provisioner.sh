@@ -12,7 +12,7 @@ git clone git://github.com/armenr/RootTheBox.git
 cd RootTheBox
 
 # Set up Dependencies for RootTheBox
-sudo yes | sudo ./setup/depends.sh
+sudo ./setup/depends.sh
 
 # Set up MySQL for RootTheBox
 sudo mysql -u root <<EOF
