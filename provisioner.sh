@@ -4,6 +4,7 @@
 echo "[*] Prepping System"
 sudo apt-get update
 sudo apt-get upgrade -y
+pgrep python | xargs kill
 
 # Install Pre-Requisites
 echo "[*] Installing Prerequisite Packages"
@@ -28,6 +29,7 @@ pip2 install netaddr --upgrade
 pip2 install nose --upgrade
 pip2 install future --upgrade
 pip2 install python-resize-image --upgrade
+pip2 install python-dotenv --upgrade
 
 # Set up MySQL for RootTheBox
 echo "[*] Setting Up MySQL"
@@ -44,18 +46,21 @@ echo "[*] Generating Default Configs"
 
 # Bootstrap production instance
 # Automagically give it admin user and password
-echo "[*] BootStrapping Prod"
-expect - <<EOF
-spawn python2 rootthebox.py --setup=prod
-expect "RootTheBox Admin Username:"
-send "armenr\r"
-expect "New Admin Password:"
-send "fuckmeintheass123123\r"
-expect "Confirm New Admin Password:"
-send "fuckmeintheass123123\r"
-EOF
+# echo "[*] BootStrapping Prod"
+# expect - <<EOF
+# spawn python2 rootthebox.py --setup=prod
+# expect -re {[?] RootTheBox Admin Username: $}
+# send -- "armenr\r"
+# expect -re {[?] New Admin Password: $}
+# send -- "fuckmeintheass123123\r"
+# expect {[?] Confirm New Admin Password: $}
+# send -- "fuckmeintheass123123\r"
+# EOF
+
+printf 'armenr\mamankoonerem123\mamankoonerem123' | ./rootthebox.py --setup=prod
 
 # Start the bitch
 echo "[*] Starting The Motherfucker"
 touch /home/vagrant/rootBox.log
 ./rootthebox.py --start > /home/vagrant/rootBox.log 2>&1 &
+

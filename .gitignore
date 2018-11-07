@@ -1,6 +1,9 @@
 # Bytecode
 *.py[co]
 
+# DotEnv
+*.env
+
 # File uploads and what not
 files/avatars/*-*
 files/avatars/user/*-*
