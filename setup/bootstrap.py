@@ -25,9 +25,6 @@ import os
 import sys
 import getpass
 
-from dotenv import load_dotenv
-load_dotenv()
-
 from libs.ConsoleColors import *
 from models import dbsession
 from models.Permission import Permission
@@ -45,14 +42,17 @@ if options.setup.lower().startswith('dev'):
     admin_handle = u'admin'
     password = 'nimda123'
 else:
-    admin_handle = os.getenv("ADMIN_USER")
-    userpass = os.getenv("ADMIN_PASSWORD")
-    # sys.stdout.write(PROMPT+"Confirm New Admin ")
-    # sys.stdout.flush()
-    if len(userpass) >= options.min_user_password_length:
-        password = userpass
+    admin_handle = unicode(raw_input(PROMPT + "RootTheBox Admin Username: "))
+    sys.stdout.write(PROMPT+"New Admin ")
+    sys.stdout.flush()
+    password1 = getpass.getpass()
+    sys.stdout.write(PROMPT+"Confirm New Admin ")
+    sys.stdout.flush()
+    password2 = getpass.getpass()
+    if password1 == password2 and len(password1) >= options.min_user_password_length:
+        password = password1
     else:
-        print(WARN+'Error: Password was less than %d chars' % (
+        print(WARN+'Error: Passwords did not match, or was less than %d chars' % (
                 options.min_user_password_length, ))
         os._exit(1)
 

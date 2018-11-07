@@ -11,7 +11,7 @@ echo "[*] Installing Prerequisite Packages"
 sudo apt-get install -y expect python-pip python-dev build-essential mysql-server memcached libmemcached-dev python-mysqldb python-mysqldb-dbg python-pycurl python-recaptcha zlib1g-dev libmysqlclient-dev
 
 # Clone Rootthebox
-echo "[*] Cloning Repo"
+echo "[*] Clone and Enter Repo"
 git clone git://github.com/armenr/RootTheBox.git
 cd RootTheBox
 
@@ -58,7 +58,7 @@ echo "[*] Generating Default Configs"
 # EOF
 
 echo "[*] BootStrapping Prod"
-./rootthebox.py --setup=prod
+./rootthebox.py --setup=dev
 
 # Start the bitch
 echo "[*] Starting The Motherfucker"
