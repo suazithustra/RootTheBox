@@ -9,43 +9,17 @@ pgrep python | xargs kill
 
 # # Install Pre-Requisites
 echo "[*] Installing Prerequisite Packages"
-sudo apt-get install -y \
-build-essential \
-expect \
-libmemcached-dev \
-libmysqlclient-dev
-memcached \
-mysql-server \
-python-dev \
-python-mysqldb \
-python-mysqldb-dbg \
-python-pip \
-python-pycurl \
-python-recaptcha \
-zlib1g-dev \
+sudo apt-get install -y build-essential expect libmemcached-dev libmysqlclient-dev memcached mysql-server python-dev python-mysqldb python-mysqldb-dbg python-pip python-pycurl python-recaptcha zlib1g-dev
 
 # # Clone Rootthebox
 echo "[*] Cloning Repo"
 # if [ -d "RootTheBox" ]; then rm -Rf RootTheBox; fi
-git clone git://github.com/armenr/RootTheBox.git
+# git clone git://github.com/armenr/RootTheBox.git
 cd RootTheBox
 
 # # Set up Dependencies for RootTheBox
 echo "[*] Installing Python Packages From Pip"
-defusedxml \
-future \
-mysql-python \
-mysqlclient \
-netaddr \
-nose \
-pbkdf2 \
-pip2 install \
-python-dateutil \
-python-memcached \
-python-resize-image \
-sqlalchemy \
-tornado \
---upgrade
+pip2 install defusedxml future mysql-python mysqlclient netaddr nose pbkdf2 python-dateutil python-memcached python-resize-image sqlalchemy tornado --upgrade
 
 # # Set up MySQL for RootTheBox
 echo "[*] Setting Up MySQL"
